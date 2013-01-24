@@ -1,13 +1,38 @@
+body {
+	font-size:12px;
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+/*	-webkit-box-sizing:border-box;*/
+	font-family:helvetica;
+/*	padding-bottom:45px;	/*	This prevents the scroller to lock if the user swipes down outside of the screen.
+							 	NOT needed if in home screen mode. */
+}
+
 ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
+#wrapper{
+    position:absolute;
+    z-index:1;
+    left:0;
+    width:300px;
+    overflow:hidden;
+
+}
+
+.scroller{
+    width:500px;
+    height:100%;
+    
+    
+}
 .element{
+    position:relative;
     width: 200px;
     height: 100px;
-    display: block;
-    position: absolute;
+    float: left;
     border:2px solid;
 }

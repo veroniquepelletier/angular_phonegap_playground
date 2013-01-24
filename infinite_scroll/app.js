@@ -8,5 +8,5 @@ angular.module('app', [])
     })
     .controller('scrollCtrl', function($scope, model) {
         console.log('new scrollCtrl')
-        var scroll = new iScroll('wrapper', { hScrollbar: false, vScrollbar: false });
+        var scroll = new iScroll('wrapper', { hScrollbar: false, vScrollbar: false, vScroll: false});
     })
