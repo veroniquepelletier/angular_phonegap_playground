@@ -1,0 +1,13 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.element{
+    width: 200px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    border:2px solid;
+}
