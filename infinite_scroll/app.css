@@ -1,7 +1,7 @@
 body {
 	font-size:12px;
 	-webkit-user-select:none;
-    -webkit-text-size-adjust:none;
+	 -webkit-text-size-adjust:none;
 /*	-webkit-box-sizing:border-box;*/
 	font-family:helvetica;
 /*	padding-bottom:45px;	/*	This prevents the scroller to lock if the user swipes down outside of the screen.
@@ -14,21 +14,23 @@ ul {
     list-style: none;
 }
 
+/* container of the elements */
 #wrapper{
     position:absolute;
     z-index:1;
     left:0;
-    width:300px;
+    width:260px;
+    height:100px;
     overflow:hidden;
+    border:2px solid;
 
 }
 
 .scroller{
-    width:500px;
+    width:200px;
     height:100%;
-    
-    
 }
+
 .element{
     position:relative;
     width: 200px;
