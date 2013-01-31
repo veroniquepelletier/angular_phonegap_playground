@@ -1,3 +1,4 @@
+
 angular.module('app', [])
     .service('model', function($timeout) {
         
@@ -43,7 +44,7 @@ angular.module('app', [])
             replace: false,
             template:
                 "<div id='wrapper' ng-controller='scrollCtrl'>" +
-                    "<div class='scroller' scroll=''>" + 
+                    "<div class='scroller' scroll=''>" +  
                         "<ul>" + 
                             "<li ng-repeat='slide in slides' scrollelem=''>" +
                             "</li>" + 
@@ -60,3 +61,49 @@ angular.module('app', [])
     .controller('scrollCtrl', function($scope, model) {
         $scope.slides = model.getData();
     })
+    .controller('dateCtrl', function ($scope){
+        $scope.input = 234234443432;
+    })
+    .filter('i18n', function() {
+        var locale = 'fr-ca',
+            lang = {
+                hello:{
+                    'en-us':'Hello Purple',
+                    'fr-ca':'Bonjour Purple'
+                }
+            };
+ 
+        return function(key) {
+            return lang[key][locale];
+        }
+    })
+    /*
+    .filter('i18n', function() { 
+        var log_untranslated = false;
+        var placeholders = [];
+        var string;
+        var lang = {}
+        
+
+        for(var i=1; i < arguments.length; i++) {
+            if(typeof(arguments[i]) == 'object') {
+                angular.forEach(arguments[i], function(item) {
+                    placeholders.push(item);
+                })
+            }
+            else {
+                placeholders.push(arguments[i]);
+            }
+        }
+
+        var translated = lang[string]; // lang ist from the language file, e.g. de_DE.js
+        if (translated === undefined) {
+            if (log_untranslated == true) {
+                // here we could track unreanslated strings by sending them to the server...
+            }
+            return sprintf(string, placeholders);
+        }
+        return sprintf(translated, placeholders);
+
+    })
+    */

@@ -9,13 +9,29 @@
 
     <link rel="stylesheet" href="app.css">
     <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-    <script type='text/javascript' src='./libs/iscroll.js'></script>
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js'></script>
+    <script type='text/javascript' src='./libs/iscroll.js'></script>
+    <script type='text/javascript' src='./libs/jquery.i18n.js'></script>
     <script type='text/javascript' src='app.js'></script>
+    <script>
+	locale = localStorage.getItem('locale');
+	if (locale) {
+	    var userLang = navigator.language || navigator.userLanguage;
+	    locale  = userLang.substring(0,2) === 'en'?  'en-us' : 'fr-ca';
+	    localStorage.setItem('locale', locale);
+	}
+	document.write('<script src="libs/angular-locale_'+locale+'.js"><\/script>');
+    </script>
 </head>
 
 <body>
-<body>
-<scroll></scroll>
+{{'hello' | i18n}}
+<div ng-controller="dateCtrl">
+    <input type="text" ng-model="input"><br>
+    date: {{input | date:"medium"}}<br>
+    date: {{input | date:"longDate"}}<br>
+    number: {{input | number}}<br>
+    currency: {{input | currency }}
+</div>
 </body>
 </html>
